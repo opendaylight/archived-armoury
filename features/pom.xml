@@ -73,19 +73,19 @@ and is available at http://www.eclipse.org/legal/epl-v10.html INTERNAL
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>armoury-impl</artifactId>
+      <artifactId>catalog-impl</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>armoury-impl</artifactId>
+      <artifactId>catalog-impl</artifactId>
       <version>${project.version}</version>
       <type>xml</type>
       <classifier>config</classifier>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>armoury-api</artifactId>
+      <artifactId>catalog-api</artifactId>
       <version>${project.version}</version>
     </dependency>
   </dependencies>
