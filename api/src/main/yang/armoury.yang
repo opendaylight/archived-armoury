@@ -1,9 +1,0 @@
-module armoury {
-    yang-version 1;
-    namespace "urn:opendaylight:params:xml:ns:yang:armoury";
-    prefix "armoury";
-
-    revision "2015-01-05" {
-        description "Initial revision of armoury model";
-    }
-}

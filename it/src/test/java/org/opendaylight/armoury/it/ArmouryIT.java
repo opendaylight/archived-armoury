@@ -31,12 +31,12 @@ public class ArmouryIT extends AbstractMdsalTestBase {
 
     @Override
     public String getModuleName() {
-        return "armoury";
+        return "catalog";
     }
 
     @Override
     public String getInstanceName() {
-        return "armoury-default";
+        return "catalog-default";
     }
 
     @Override
