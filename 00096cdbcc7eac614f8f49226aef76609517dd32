@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a79b1b5_68c5d28c",
+        "filename": "catalog-api/src/main/yang/catalog.yang",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4837
+      },
+      "writtenOn": "2015-09-18T16:27:00Z",
+      "side": 1,
+      "message": "Please put the network function in the top level so it can be import by the workloadmanager",
+      "revId": "00096cdbcc7eac614f8f49226aef76609517dd32",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
