@@ -1,0 +1,72 @@
+module workloadmanager {
+    yang-version 1;
+    namespace "urn:opendaylight:params:xml:ns:yang:workloadmanager";
+    prefix "workloadmanager";
+
+//    import catalog { prefix catalog; revision-date 2015-09-07; }
+
+    contact "Ariel Noy <ariel.noy@hpe.com>";
+
+    revision "2015-09-18" {
+        description "Initial revision of workloadmanager armoury model";
+    }
+
+    // Need to import this from catalog
+    grouping catalogVNFType {
+        description "VNF Type";
+        leaf name {
+            description "Name of the VNF";
+            type string;
+        }
+    }
+
+    // Need to import this from catalog
+    grouping catalogVNFInstance {
+        description "VNF Instance";
+        leaf name {
+            description "Name of the VNF Instance";
+            type string;
+        }
+    }
+
+    rpc create {
+        input {
+//          uses catalog:catalogs:catalog:network-functions;
+            uses catalogVNFType;
+        }
+        output {
+            uses catalogVNFInstance;
+        }
+    }
+
+    rpc delete {
+        input {
+            uses catalogVNFInstance;
+        }
+    }
+
+    rpc start {
+        input {
+            uses catalogVNFInstance;
+        }
+    }
+
+    rpc stop {
+        input {
+            uses catalogVNFInstance;
+        }
+    }
+
+    rpc suspend {
+        input {
+            uses catalogVNFInstance;
+        }
+    }
+
+    rpc resume {
+        input {
+            uses catalogVNFInstance;
+        }
+    }
+
+}
