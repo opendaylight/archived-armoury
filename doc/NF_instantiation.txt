@@ -1,0 +1,25 @@
+title NF Instantiation
+
+# This diagram outlines the basic use case of NF instance creation. Users come and configure new instances of NF (pointing to a specific Catalog entry) and Workload manager spawns the NF in the background.
+
+
+User->Rest: NF-instance creation
+note left of Rest: This is just an ordinary write\n to config space
+
+Rest->Datastore: NF-instance write
+
+Datastore->Workload Manager: NF-instance notification
+note left of Workload Manager: Part of the NF-instance configuration \n is I-ID of a catalog entry for NF
+
+Workload Manager->Catalog: NF-catalog entry read
+
+Workload Manager->Datastore: State data init
+note left of Workload Manager: Initial op data write with value \n "initializing"
+
+Workload Manager->Driver Registry: NF Instantiation
+note right of Driver Registry: Choose fitting driver \n // TODO how to choose the driver ?
+
+Driver Registry->Driver: NF Instantiation
+
+Workload Manager->Datastore: State data update
+note left of Workload Manager: Op data updated to state: \n "running" or "failed"
