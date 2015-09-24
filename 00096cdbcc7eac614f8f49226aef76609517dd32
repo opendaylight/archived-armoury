@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a76adc5_45f5cc81",
+        "filename": "catalog-api/src/main/yang/catalog.yang",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1010
+      },
+      "writtenOn": "2015-09-24T21:31:54Z",
+      "side": 1,
+      "message": "Are we re-inventing SF from the SFC project? Not that we should, because it needs a LOT of work, but what is our intent here?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 16
+      },
+      "revId": "00096cdbcc7eac614f8f49226aef76609517dd32",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a79b1b5_68c5d28c",
         "filename": "catalog-api/src/main/yang/catalog.yang",
         "patchSetId": 3
@@ -13,6 +36,47 @@
       "writtenOn": "2015-09-18T16:27:00Z",
       "side": 1,
       "message": "Please put the network function in the top level so it can be import by the workloadmanager",
+      "revId": "00096cdbcc7eac614f8f49226aef76609517dd32",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_25f8d07b",
+        "filename": "catalog-api/src/main/yang/catalog.yang",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1010
+      },
+      "writtenOn": "2015-09-24T21:31:54Z",
+      "side": 1,
+      "message": "Actually the way he has it makes a lot of sense if we are going down this route. Allows for \"wildcard\" datastore searches and easier subscription.",
+      "parentUuid": "3a79b1b5_68c5d28c",
+      "revId": "00096cdbcc7eac614f8f49226aef76609517dd32",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_8503e472",
+        "filename": "catalog-api/src/main/yang/catalog.yang",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1010
+      },
+      "writtenOn": "2015-09-24T21:31:54Z",
+      "side": 1,
+      "message": "Do we really want to bite off IPAM ?",
+      "range": {
+        "startLine": 66,
+        "startChar": 6,
+        "endLine": 78,
+        "endChar": 13
+      },
       "revId": "00096cdbcc7eac614f8f49226aef76609517dd32",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
