@@ -47,7 +47,7 @@ module catalog {
         // ext:augment-identifier "example-network-function-1.0"; // TODO add yang-ext dependency
 
         // Add fields only to a specific network function
-        when "catalog:name = 'example-network-function' and catalog:version = '1.0";
+        when "catalog:name = 'example-network-function' and catalog:version = '1.0'";
 
         // How to link to a driver ? do we want to specify the driver here with an extension ?
 
