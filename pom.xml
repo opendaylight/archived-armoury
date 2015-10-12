@@ -25,6 +25,7 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
   </prerequisites>
   <modules>
     <module>catalog-api</module>
+    <module>driver-registry-api</module>
     <module>catalog-impl</module>
     <module>workloadmanager-api</module>
     <module>workloadmanager-impl</module>
