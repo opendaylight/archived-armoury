@@ -9,6 +9,10 @@ module catalog {
         description "Initial revision of catalog model";
     }
 
+    identity image-type-base {
+        description "base identity for all the images.";
+    }
+
     container catalogs {
 
         // Do we need multiple catalog instances ?
@@ -57,7 +61,9 @@ module catalog {
         }
 
         leaf image {
-            type string; // FIXME make this URL
+            type identityref {
+                base image-type-base;
+            }
         }
 
         // TODO this example network-function contains a resource pool: IPs. Do we want the resource pools to be part of the catalog ? and where will the currently-in-use be stored ?

@@ -1,0 +1,85 @@
+module driver-registry {
+    yang-version 1;
+    namespace "urn:opendaylight:params:xml:ns:yang:driver-registry";
+    prefix "driver-registry";
+
+    import ietf-inet-types {prefix inet; revision-date "2010-09-24";}
+    import catalog {prefix catalog; revision-date "2015-09-07";}
+
+    revision "2015-10-14" {
+        description "Initial revision of driver-registry model";
+    }
+
+    // this grouping will be required, if orchestrator is managing
+    // multiple region.
+    grouping location { // any better name for this grouping
+        leaf domain {
+            type string;
+        }
+        leaf region {
+            type string;
+        }
+        leaf machine-id {
+            type string;
+        }
+    }
+
+    grouping driver-info {
+
+        container driver-URL {
+            description "It defines the required to reach the driver API end-point.
+                e.g. scheme://[user:password@]host:port ."
+            leaf host {
+                type inet:host;
+            }
+            leaf port {
+                type inet:port-number;
+            }
+            leaf username {
+                type string;
+            }
+            leaf password {
+                type string;
+            }
+        }
+
+        uses location;
+
+        leaf image-type {
+            type identityref {
+                base catalog:image-type-base;
+            }
+        }
+
+        leaf create-end-point-url {
+            type string;
+        }
+        leaf version {
+            type string;
+        }
+        leaf technology { // Need clarification
+            type enumeration {
+                enum virtual;
+                enum physical;
+            }
+        }
+        leaf orchestrator {
+            type enumeration {
+                enum openstack;
+                enum docker;
+            }
+        }
+    }
+
+    container driver-registry {
+        list driver-list {
+            container driver {
+                key "id";
+
+                leaf id {
+                    type string;
+                }
+                uses driver-info;
+        }
+    }
+}
