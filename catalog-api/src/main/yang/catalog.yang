@@ -78,4 +78,70 @@ module catalog {
             }
         }
     }
+
+
+    grouping location { // any better name for this grouping
+        leaf domain {
+            type string;
+        }
+        leaf region {
+            type string;
+        }
+        leaf machine-id {
+            type string;
+        }
+    }
+
+    // list of images
+    grouping images {
+        // TODO : complete the details of image.
+        list image-list {
+            key image-id;
+
+            leaf image-id {
+                type string;
+            }
+            leaf image-name {
+                type string;
+            }
+        }
+    }
+
+    grouping driver-registry {
+        list driver-list {
+            container driver {
+                key "id";
+
+                leaf id {
+                    type string;
+                }
+                leaf username {
+                    type string;
+                }
+                leaf password {
+                    type string;
+                }
+                uses images;
+                uses location;
+
+                leaf create-end-point-url {
+                    type string;
+                }
+                leaf version {
+                    type string;
+                }
+                leaf technology { // Need clarification
+                    type enumeration {
+                        enum virtual;
+                        enum physical;
+                    }
+                }
+                leaf orchestrator {
+                    type enumeration {
+                        enum openstack;
+                        enum docker;
+                    }
+                }
+        }
+    }
 }
