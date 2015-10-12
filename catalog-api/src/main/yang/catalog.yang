@@ -4,6 +4,7 @@ module catalog {
     prefix "catalog";
 
     // import yang-ext { prefix ext; revision-date "2013-07-09";}
+    import image-type { prefix image-type; revision-date "2015-09-07";}
 
     revision "2015-09-07" {
         description "Initial revision of catalog model";
@@ -57,7 +58,9 @@ module catalog {
         }
 
         leaf image {
-            type string; // FIXME make this URL
+            type identityref {
+                base image-type:image-type-base;
+            }
         }
 
         // TODO this example network-function contains a resource pool: IPs. Do we want the resource pools to be part of the catalog ? and where will the currently-in-use be stored ?
