@@ -1,0 +1,78 @@
+module driver-registry {
+    yang-version 1;
+    namespace "urn:opendaylight:params:xml:ns:yang:driver-registry";
+    prefix "driver-registry";
+
+    revision "2015-10-14" {
+        description "Initial revision of driver-registry model";
+    }
+
+    // list of images
+    grouping images {
+        // TODO : complete the details of image.
+        list image-list {
+            key image-id;
+
+            leaf image-id {
+                type string;
+            }
+            leaf image-name {
+                type string;
+            }
+        }
+    }
+
+    grouping location { // any better name for this grouping
+        leaf domain {
+            type string;
+        }
+        leaf region {
+            type string;
+        }
+        leaf machine-id {
+            type string;
+        }
+    }
+
+    grouping driver-info {
+        leaf username {
+            type string;
+        }
+        leaf password {
+            type string;
+        }
+        uses images;
+        uses location;
+
+        leaf create-end-point-url {
+            type string;
+        }
+        leaf version {
+            type string;
+        }
+        leaf technology { // Need clarification
+            type enumeration {
+                enum virtual;
+                enum physical;
+            }
+        }
+        leaf orchestrator {
+            type enumeration {
+                enum openstack;
+                enum docker;
+            }
+        }
+    }
+
+    container driver-registry {
+        list driver-list {
+            container driver {
+                key "id";
+
+                leaf id {
+                    type string;
+                }
+                uses driver-info;
+        }
+    }
+}
