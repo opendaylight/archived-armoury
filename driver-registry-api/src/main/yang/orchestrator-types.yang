@@ -1,0 +1,19 @@
+module orchestrator-types {
+    yang-version 1;
+    namespace "urn:opendaylight:params:xml:ns:yang:orchestrator-types";
+    prefix "orchestrator-types";
+
+    revision "2015-10-14" {
+        description "Initial revision of orchestrator-type model";
+    }
+
+    identity orchestrator-type-base {
+        description "base identity for all the orchestrator.";
+    }
+
+    typedef orchestrator-type {
+        type identityref {
+            base orchestrator-types:orchestrator-type-base;
+        }
+    }
+}
