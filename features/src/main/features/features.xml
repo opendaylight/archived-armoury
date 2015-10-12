@@ -31,6 +31,11 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
     <configfile finalname="${configfile.directory}/armoury-workloadmanager.xml">mvn:org.opendaylight.armoury/workloadmanager-impl/{{VERSION}}/xml/config</configfile>
   </feature>
 
+  <feature name='odl-armoury-driver' version='${project.version}' description='OpenDaylight :: Armoury :: Driver Registry'>
+    <feature version='${project.version}'>odl-armoury-catalog</feature>
+    <bundle>mvn:org.opendaylight.armoury/driver-registry-api/{{VERSION}}</bundle>
+  </feature>
+
   <feature name='odl-armoury-rest' version='${project.version}' description='OpenDaylight :: armoury :: REST'>
     <feature version="${project.version}">odl-armoury-workloadmanager</feature>
     <feature version="${restconf.version}">odl-restconf</feature>

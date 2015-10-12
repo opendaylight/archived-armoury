@@ -4,9 +4,8 @@ module catalog {
     prefix "catalog";
 
     import ietf-inet-types { prefix inet; revision-date 2010-09-24; }
-
     import ietf-yang-types { prefix yang; revision-date 2010-09-24; }
-
+    import image-types { prefix image-types; revision-date "2015-09-07";}
     // import yang-ext { prefix ext; revision-date "2013-07-09";}
 
     revision "2015-09-07" {
@@ -66,9 +65,9 @@ module catalog {
         }
 
         leaf image {
-            type string;
+            type image-types:image-type;
         }
-            // FIXME make this URL        }
+    }
 
         // TODO this example network-function contains a resource pool: IPs. Do we want the resource pools to be part of the catalog ? and where will the currently-in-use be stored ?
         // TODO abstract a resource pool (into a grouping or a list inside the network function) and make it available for all the network functions

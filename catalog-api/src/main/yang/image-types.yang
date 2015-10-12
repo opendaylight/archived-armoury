@@ -1,0 +1,19 @@
+module image-types {
+    yang-version 1;
+    namespace "urn:opendaylight:params:xml:ns:yang:image-types";
+    prefix "image-types";
+
+    revision "2015-09-07" {
+        description "Initial revision of image-type model";
+    }
+
+    identity image-type-base {
+        description "base identity for all the images.";
+    }
+
+    typedef image-type {
+        type identityref {
+            base image-types:image-type-base;
+        }
+    }
+}
