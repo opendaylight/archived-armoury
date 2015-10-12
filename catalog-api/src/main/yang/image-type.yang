@@ -1,0 +1,13 @@
+module image-type {
+    yang-version 1;
+    namespace "urn:opendaylight:params:xml:ns:yang:image-type";
+    prefix "image-type";
+
+    revision "2015-09-07" {
+        description "Initial revision of catalog model";
+    }
+
+    identity image-type-base {
+        description "base identity for all the images.";
+    }
+}
