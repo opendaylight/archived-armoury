@@ -98,5 +98,22 @@ and is available at http://www.eclipse.org/legal/epl-v10.html INTERNAL
       <artifactId>catalog-api</artifactId>
       <version>${project.version}</version>
     </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>workloadmanager-impl</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>workloadmanager-impl</artifactId>
+      <version>${project.version}</version>
+      <type>xml</type>
+      <classifier>config</classifier>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>workloadmanager-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
   </dependencies>
 </project>
