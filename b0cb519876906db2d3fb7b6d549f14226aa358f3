@@ -22,6 +22,30 @@
       "revId": "b0cb519876906db2d3fb7b6d549f14226aa358f3",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad0f9df_3b81eb4a",
+        "filename": "workloadmanager-impl/src/main/java/org/opendaylight/yang/gen/v1/urn/opendaylight/params/xml/ns/yang/workloadmanager/impl/rev141210/WorkloadManagerModuleFactory.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 3675
+      },
+      "writtenOn": "2015-10-15T17:47:50Z",
+      "side": 1,
+      "message": "it\u0027s part of the copyright comment.\n\nThere are 2 separated comments here, the one for copyright, and the one for generated file",
+      "parentUuid": "fad0f9df_5b82af53",
+      "range": {
+        "startLine": 7,
+        "startChar": 1,
+        "endLine": 7,
+        "endChar": 3
+      },
+      "revId": "b0cb519876906db2d3fb7b6d549f14226aa358f3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
