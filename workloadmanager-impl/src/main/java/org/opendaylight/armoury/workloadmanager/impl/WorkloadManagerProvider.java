@@ -5,25 +5,25 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.armoury.impl;
+package org.opendaylight.armoury.workloadmanager.impl;
 
 import org.opendaylight.controller.sal.binding.api.BindingAwareBroker.ProviderContext;
 import org.opendaylight.controller.sal.binding.api.BindingAwareProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class CatalogProvider implements BindingAwareProvider, AutoCloseable {
+public class WorkloadManagerProvider implements BindingAwareProvider, AutoCloseable {
 
-    private static final Logger LOG = LoggerFactory.getLogger(CatalogProvider.class);
+    private static final Logger LOG = LoggerFactory.getLogger(WorkloadManagerProvider.class);
 
     @Override
     public void onSessionInitiated(ProviderContext session) {
-        LOG.info("ArmouryProvider Session Initiated");
+        LOG.info("WorkloadManagerProvider Session Initiated");
     }
 
     @Override
     public void close() throws Exception {
-        LOG.info("ArmouryProvider Closed");
+        LOG.info("WorkloadManagerProvider Closed");
     }
 
 }

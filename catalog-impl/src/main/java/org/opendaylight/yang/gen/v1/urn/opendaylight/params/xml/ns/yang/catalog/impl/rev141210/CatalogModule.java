@@ -1,6 +1,6 @@
 package org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.catalog.impl.rev141210;
 
-import org.opendaylight.armoury.impl.CatalogProvider;
+import org.opendaylight.armoury.catalog.impl.CatalogProvider;
 
 public class CatalogModule extends org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.catalog.impl.rev141210.AbstractCatalogModule {
     public CatalogModule(org.opendaylight.controller.config.api.ModuleIdentifier identifier, org.opendaylight.controller.config.api.DependencyResolver dependencyResolver) {
@@ -18,7 +18,9 @@ public class CatalogModule extends org.opendaylight.yang.gen.v1.urn.opendaylight
 
     @Override
     public java.lang.AutoCloseable createInstance() {
-        return new CatalogProvider();
+        CatalogProvider provider = new CatalogProvider();
+        getBrokerDependency().registerProvider(provider);
+        return provider;
     }
 
 }
