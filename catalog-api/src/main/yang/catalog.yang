@@ -3,10 +3,28 @@ module catalog {
     namespace "urn:opendaylight:params:xml:ns:yang:catalog";
     prefix "catalog";
 
+    import ietf-inet-types { prefix inet; revision-date 2010-09-24; }
+
+    import ietf-yang-types { prefix yang; revision-date 2010-09-24; }
+
     // import yang-ext { prefix ext; revision-date "2013-07-09";}
 
     revision "2015-09-07" {
         description "Initial revision of catalog model";
+    }
+
+    grouping network-function {
+
+        leaf name {
+            type string;
+        }
+
+        // Default version might be useful here (even though version is part of the key), look at yanglibrary model how to achieve it
+        leaf version {
+            type string;
+        }
+
+        // TODO do we want this to be completely freeform ? Or define a choice of anyxml/url/container(for freeform augmentation) for configuration and maybe provide just a single url for the image ?    }
     }
 
     container catalogs {
@@ -24,56 +42,51 @@ module catalog {
 
             // Network functions will need to link/provide files. How do we want to do that ? store them in ODL and make a file server ? or just rely on external file servers ?
             container network-functions {
-                list network-function {
+                list functions {
                     key "name version";
-
-                    leaf name {
-                        type string;
-                    }
-
-                    // Default version might be useful here (even though version is part of the key), look at yanglibrary model how to achieve it
-                    leaf version {
-                        type string;
-                    }
-
-                    // TODO do we want this to be completely freeform ? Or define a choice of anyxml/url/container(for freeform augmentation) for configuration and maybe provide just a single url for the image ?
+                    uses network-function;
                 }
             }
         }
     }
 
     // Example network function resources
-    augment "/catalog:catalogs/catalog:catalog/catalog:network-functions/catalog:network-function" {
+    augment "/catalog:catalogs/catalog:catalog/catalog:network-functions/catalog:functions" {
         // ext:augment-identifier "example-network-function-1.0"; // TODO add yang-ext dependency
 
         // Add fields only to a specific network function
-        when "catalog:name = 'example-network-function' and catalog:version = '1.0'";
+        when "catalog:name = 'example-network-function' and catalog:version
+                = '1.0'";
 
         // How to link to a driver ? do we want to specify the driver here with an extension ?
 
         container day0config {
-            anyxml initial-configuration{
+            anyxml initial-configuration {
             }
         }
 
         leaf image {
-            type string; // FIXME make this URL
+            type string;
         }
+            // FIXME make this URL        }
 
         // TODO this example network-function contains a resource pool: IPs. Do we want the resource pools to be part of the catalog ? and where will the currently-in-use be stored ?
         // TODO abstract a resource pool (into a grouping or a list inside the network function) and make it available for all the network functions
         // TODO should the resource pools be part of network-functions ?
         container ip-pool {
             leaf start-ip {
-                type string; // FIXME make IP
+            	type inet:ip-address;	
+    	        reference "http://www.iana.org/assignments/safi-namespace/safi-namespace.xhtml";
             }
 
             leaf end-ip {
-                type string; // FIXME make IP
+            	type inet:ip-address;	
+    	        reference "http://www.iana.org/assignments/safi-namespace/safi-namespace.xhtml";
             }
 
             leaf-list ip-in-use {
-                type string; // FIXME make IP
+            	type inet:ip-address;	
+    	        reference "http://www.iana.org/assignments/safi-namespace/safi-namespace.xhtml";
                 config false;
             }
         }
