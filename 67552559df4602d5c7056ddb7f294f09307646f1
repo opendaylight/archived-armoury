@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad0f9df_63ed7d8b",
+        "filename": "catalog-api/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 3675
+      },
+      "writtenOn": "2015-10-20T12:22:56Z",
+      "side": 1,
+      "message": "Could you remove the tabs and use models from mdsal project: https://github.com/opendaylight/mdsal/tree/master/model/ietf\nThose were remove from yangtools during this release.",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 17
+      },
+      "revId": "67552559df4602d5c7056ddb7f294f09307646f1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad0f9df_c3fb0946",
+        "filename": "workloadmanager-api/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 3675
+      },
+      "writtenOn": "2015-10-20T12:22:56Z",
+      "side": 1,
+      "message": "Could you remove the tabs?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 17
+      },
+      "revId": "67552559df4602d5c7056ddb7f294f09307646f1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
