@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad0f9df_3ae4730c",
+        "filename": "driver-registry-api/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 3675
+      },
+      "writtenOn": "2015-10-22T14:35:03Z",
+      "side": 1,
+      "message": "Please use models from mdsal projects",
+      "range": {
+        "startLine": 25,
+        "startChar": 34,
+        "endLine": 25,
+        "endChar": 43
+      },
+      "revId": "20ae08c8e5dfd54677da9a4164ef9cc3261d9fdd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
