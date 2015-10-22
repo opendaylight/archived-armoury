@@ -4,6 +4,7 @@ module catalog {
     prefix "catalog";
 
     // import yang-ext { prefix ext; revision-date "2013-07-09";}
+    import ietf-inet-types { prefix inet; revision-date "2010-09-24";}
 
     revision "2015-09-07" {
         description "Initial revision of catalog model";
@@ -65,15 +66,15 @@ module catalog {
         // TODO should the resource pools be part of network-functions ?
         container ip-pool {
             leaf start-ip {
-                type string; // FIXME make IP
+                type inet:ip-address;
             }
 
             leaf end-ip {
-                type string; // FIXME make IP
+                type inet:ip-address;
             }
 
             leaf-list ip-in-use {
-                type string; // FIXME make IP
+                type inet:ip-address;
                 config false;
             }
         }
