@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad0f9df_babf03d0",
+        "filename": "catalog-api/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 3675
+      },
+      "writtenOn": "2015-10-22T14:38:45Z",
+      "side": 1,
+      "message": "do you need this particular version? if no, could you remove it.\ndefault is 2010-09-24",
+      "range": {
+        "startLine": 25,
+        "startChar": 27,
+        "endLine": 25,
+        "endChar": 38
+      },
+      "revId": "2e83f1c6f43a213797f13b29f0af5e2f5ef3c891",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad0f9df_5ab4d7f1",
+        "filename": "catalog-api/src/main/yang/catalog.yang",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 3675
+      },
+      "writtenOn": "2015-10-22T14:38:45Z",
+      "side": 1,
+      "message": "please use spaces instead of tabs",
+      "range": {
+        "startLine": 78,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 13
+      },
+      "revId": "2e83f1c6f43a213797f13b29f0af5e2f5ef3c891",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
