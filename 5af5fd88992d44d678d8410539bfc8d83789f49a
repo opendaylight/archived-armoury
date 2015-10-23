@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad0f9df_5d65aedf",
+        "filename": "driver-registry-api/src/main/yang/driver-registry.yang",
+        "patchSetId": 13
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 3675
+      },
+      "writtenOn": "2015-10-23T19:19:32Z",
+      "side": 1,
+      "message": "remove white space please",
+      "range": {
+        "startLine": 66,
+        "startChar": 25,
+        "endLine": 66,
+        "endChar": 26
+      },
+      "revId": "5af5fd88992d44d678d8410539bfc8d83789f49a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
