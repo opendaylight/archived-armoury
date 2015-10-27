@@ -1,7 +1,7 @@
+Use in - https://www.websequencediagrams.com
 title NF Instantiation
 
 # This diagram outlines the basic use case of NF instance creation. Users come and configure new instances of NF (pointing to a specific Catalog entry) and Workload manager spawns the NF in the background.
-
 
 User->Rest: NF-instance creation
 note left of Rest: This is just an ordinary write\n to config space
@@ -11,15 +11,63 @@ Rest->Datastore: NF-instance write
 Datastore->Workload Manager: NF-instance notification
 note left of Workload Manager: Part of the NF-instance configuration \n is I-ID of a catalog entry for NF
 
+Workload Manager->Datastore: NF-instance notification ACK
+
 Workload Manager->Catalog: NF-catalog entry read
 
-Workload Manager->Datastore: State data init
-note left of Workload Manager: Initial op data write with value \n "initializing"
+Catalog->Workload Manager: NF-catalog entry read status
 
 Workload Manager->Driver Registry: NF Instantiation
 note right of Driver Registry: Choose fitting driver \n // TODO how to choose the driver ?
 
-Driver Registry->Driver: NF Instantiation
+Driver Registry->Driver: NF Instantiation request
+note right of Driver Registry: Init response data
+
+Driver->VIM: NF Instantiation request
+
+VIM->Driver: NF Instantiation init return code
+
+Driver->Driver Registry: NF Instantiation init response 
+
+Driver Registry->Workload Manager: NF Instantiation init reponse
+
+Workload Manager->Datastore: State data init
+note left of Workload Manager: Initial op data write with value \n "initializing"
+
+Datastore->Rest: NF instance status
+
+Rest->User: NF instance status
+
+loop
+Workload Manager->Driver Registry: NF Instantiation status check
+Driver Registry->Driver: NF Instantiation status check
+
+
+Driver-> Driver Registry: NF Instantiation status response
+
+Driver Registry->Workload Manager: NF Instantiation status response
+end
+
+loop
+note right of Driver: Periodic check
+Driver->VIM: NF Instantiation status query request 
+VIM->Driver: NF Instantiation status query response
+end
+
+note right of Driver Registry: Upon success or failure 
+
+Driver-> Driver Registry: NF Instantiation final response notification
+
+Driver Registry->Workload Manager: NF Instantiation final response notification
 
 Workload Manager->Datastore: State data update
 note left of Workload Manager: Op data updated to state: \n "running" or "failed"
+
+User->Rest: NF-instance status check
+
+Rest->Datastore: NF-instance status check
+
+Datastore->Rest: NF instance status response
+
+Rest->User: NF instance status response
+
