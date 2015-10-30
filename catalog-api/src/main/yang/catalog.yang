@@ -23,7 +23,7 @@ module catalog {
             type string;
         }
 
-        // TODO do we want this to be completely freeform ? Or define a choice of anyxml/url/container(for freeform augmentation) for configuration and maybe provide just a single url for the image ?    }
+        // TODO do we want this to be completely freeform ? Or define a choice of anyxml/url/container(for freeform augmentation) for configuration and maybe provide just a single url for the image ?
     }
 
     container catalogs {
@@ -39,7 +39,7 @@ module catalog {
                 type string;
             }
 
-            // Network functions will need to link/provide files. How do we want to do that ? store them in ODL and make a file server ? or just rely on external file servers ?
+            // Network functions will need to link/provide files. How do we want to do that ? store them in ODL and make a file server ? or just rely on external file servers ?    }
             container network-functions {
                 list functions {
                     key "name version";
@@ -89,5 +89,4 @@ module catalog {
                 config false;
             }
         }
-    }
 }
