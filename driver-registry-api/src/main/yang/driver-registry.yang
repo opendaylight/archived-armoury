@@ -36,7 +36,7 @@ module driver-registry {
 
         container driver-URL {
             description "It defines the required to reach the driver API end-point.
-                e.g. scheme://[user:password@]host:port ."
+                e.g. scheme://[user:password@]host:port .";
             leaf host {
                 type inet:host;
             }
@@ -80,6 +80,7 @@ module driver-registry {
                     type string;
                 }
                 uses driver-info;
+            }
         }
     }
 }

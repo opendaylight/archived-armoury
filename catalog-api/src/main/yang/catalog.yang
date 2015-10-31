@@ -69,25 +69,24 @@ module catalog {
         }
     }
 
-        // TODO this example network-function contains a resource pool: IPs. Do we want the resource pools to be part of the catalog ? and where will the currently-in-use be stored ?
-        // TODO abstract a resource pool (into a grouping or a list inside the network function) and make it available for all the network functions
-        // TODO should the resource pools be part of network-functions ?
-        container ip-pool {
-            leaf start-ip {
-                type inet:ip-address;
-                reference "http://www.iana.org/assignments/safi-namespace/safi-namespace.xhtml";
-            }
+    // TODO this example network-function contains a resource pool: IPs. Do we want the resource pools to be part of the catalog ? and where will the currently-in-use be stored ?
+    // TODO abstract a resource pool (into a grouping or a list inside the network function) and make it available for all the network functions
+    // TODO should the resource pools be part of network-functions ?
+    container ip-pool {
+        leaf start-ip {
+            type inet:ip-address;
+            reference "http://www.iana.org/assignments/safi-namespace/safi-namespace.xhtml";
+        }
 
-            leaf end-ip {
-                type inet:ip-address;
-                reference "http://www.iana.org/assignments/safi-namespace/safi-namespace.xhtml";
-            }
+        leaf end-ip {
+            type inet:ip-address;
+            reference "http://www.iana.org/assignments/safi-namespace/safi-namespace.xhtml";
+        }
 
-            leaf-list ip-in-use {
-                type inet:ip-address;
-                reference "http://www.iana.org/assignments/safi-namespace/safi-namespace.xhtml";
-                config false;
-            }
+        leaf-list ip-in-use {
+            type inet:ip-address;
+            reference "http://www.iana.org/assignments/safi-namespace/safi-namespace.xhtml";
+            config false;
         }
     }
 }
