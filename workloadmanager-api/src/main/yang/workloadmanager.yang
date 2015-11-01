@@ -11,61 +11,92 @@ module workloadmanager {
         description "Initial revision of workloadmanager armoury model";
     }
 
-    // Need to import this from catalog
-    grouping catalogVNFType {
-        description "VNF Type";
-        leaf name {
-            description "Name of the VNF";
-            type string;
+
+    typedef vnfstatus {
+        type enumeration {
+             enum start {
+                 value "0";
+             }
+             enum stop {
+                 value "1";
+             }
+             enum suspend {
+                 value "2";
+             }
+             enum running {
+                 value "3";
+             }
         }
     }
 
-    // Need to import this from catalog
-    grouping catalogVNFInstance {
+    grouping VNFStatus {
+        leaf status {
+            type vnfstatus;
+        }
+    }
+
+    grouping VNFInstance {
         description "VNF Instance";
         leaf name {
             description "Name of the VNF Instance";
             type string;
         }
+        container type {
+	    description "Type of the VNF";
+            uses catalog:network-function;
+        }
+        leaf status {
+            description "Status of the VNF";
+            type vnfstatus;
+        }
+
+    }
+
+    rpc status {
+        input {
+            uses VNFInstance;
+        }
+        output {
+            uses VNFStatus;
+        }
     }
 
     rpc create {
         input {
-//          uses catalog:catalogs:catalog:network-functions;
             uses catalog:network-function;
         }
         output {
-            uses catalogVNFInstance;
+            uses VNFInstance;
         }
     }
 
     rpc delete {
         input {
-            uses catalogVNFInstance;
+            uses VNFInstance;
         }
     }
 
     rpc start {
         input {
-            uses catalogVNFInstance;
+            uses VNFInstance;
         }
     }
 
     rpc stop {
         input {
-            uses catalogVNFInstance;
+            uses VNFInstance;
         }
     }
 
     rpc suspend {
         input {
-            uses catalogVNFInstance;
+            uses VNFInstance;
         }
     }
 
     rpc resume {
         input {
-            uses catalogVNFInstance;
+            uses VNFInstance;
         }
     }
 

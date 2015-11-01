@@ -15,6 +15,8 @@ import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.workload
 import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.workloadmanager.rev150918.ResumeInput;
 import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.workloadmanager.rev150918.StartInput;
 import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.workloadmanager.rev150918.StopInput;
+import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.workloadmanager.rev150918.StatusInput;
+import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.workloadmanager.rev150918.StatusOutput;
 import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.workloadmanager.rev150918.SuspendInput;
 import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.workloadmanager.rev150918.WorkloadmanagerService;
 import org.opendaylight.yangtools.yang.common.RpcResult;
@@ -24,6 +26,13 @@ import org.slf4j.LoggerFactory;
 public class WorkloadManagerImpl implements WorkloadmanagerService {
 
     private static final Logger LOG = LoggerFactory.getLogger(WorkloadManagerImpl.class);
+
+    @Override
+    public Future<RpcResult<StatusOutput>> status(StatusInput input) {
+        // TODO: Method need to be implemented.
+        LOG.info("status called, input {}", input);
+        return null;
+    }
 
     @Override
     public Future<RpcResult<Void>> stop(StopInput input) {
