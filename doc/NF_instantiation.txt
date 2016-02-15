@@ -70,4 +70,3 @@ Rest->Datastore: NF-instance status check
 Datastore->Rest: NF instance status response
 
 Rest->User: NF instance status response
-
